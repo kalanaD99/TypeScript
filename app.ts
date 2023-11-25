@@ -1,5 +1,6 @@
 console.log("Hello TypeScript");
 
+/*
 //why ts
 function sum(num1: number, num2: number){
     return num1 + num2;
@@ -30,6 +31,7 @@ let result1 = sendSum(10, 20,'Kalana', true);
 console.log(result1);
 let result2= sendSum(10, 20,'Kalana', false);
 console.log(result2);
+*/
 
             //functions
 //----------------------------------//
@@ -64,7 +66,7 @@ console.log(result4);
 
 */
 
-
+/*
              // object
 //=================================//
 
@@ -111,15 +113,17 @@ let location1_lat_input_element  = document.getElementById('lat1') as HTMLInputE
 let location1_lon_input_element  = document.getElementById('lon1') as HTMLInputElement;
 let location2_lat_input_element  = document.getElementById('lat2') as HTMLInputElement;
 let location2_lon_input_element  = document.getElementById('lon2') as HTMLInputElement;
+let result_element = document.getElementById('result');
 
  btn_element.addEventListener('click',()=>{
      let location1_lat = location1_lat_input_element.value;
      let location1_lon = location1_lon_input_element.value;
-     let location2_lat = location1_lat_input_element.value;
-     let location2_lon = location1_lon_input_element.value;
+     let location2_lat = location2_lat_input_element.value;
+     let location2_lon = location2_lon_input_element.value;
 
- })
+ })*/
 
+/*
 //arrays
 //------------------------------------
 //types
@@ -141,11 +145,33 @@ let location2_lon_input_element  = document.getElementById('lon2') as HTMLInputE
     let students: Graduate[]=[];
     let teachers: Graduate2[]=[];
 
-         /*   //uni ? : string ==> optional(?)
-    let students: {id: number; name: string, age: number, faculty: string,uni?: string}[] = [];*/
+         /!*   //uni ? : string ==> optional(?)
+    let students: {id: number; name: string, age: number, faculty: string,uni?: string}[] = [];*!/
 
     students.push(student1);
     students.push(student2);
     students.push(student3);
 
+*/
 
+            //Class
+//========================================================
+
+class person{
+    name: string;
+    age: number;
+    readonly nic: string; // cannot update when using read only keyword....
+
+    constructor(name: string, age: number, nic: string) {
+        this.name = name;
+        this.age = age;
+        this.nic = nic;
+    }
+}
+
+let person1 = new person('kalana',24,'199908400628');
+console.log(person1);
+person1.name = "Janith";
+console.log(person1);
+/*
+person1.nic = "199958258588";*/ // cannot update while using read only keyword
