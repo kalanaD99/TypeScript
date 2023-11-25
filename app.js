@@ -22,3 +22,10 @@ var result1 = sendSum(10, 20, 'Kalana', true);
 console.log(result1);
 var result2 = sendSum(10, 20, 'Kalana', false);
 console.log(result2);
+//functions
+//function findSum(num1: number,num2: number):number(return wenna ona type ek define krnawa){
+function findSum(num1, num2) {
+    return num1 + num2;
+}
+var result = findSum(10, 20);
+console.log("result :" + result);
