@@ -28,6 +28,7 @@ person1.nic = "199958258588";*!/ // cannot update while using read only keyword
 
 
 
+/*
 
 
 //====Private===========
@@ -71,4 +72,10 @@ class DBConnection {
 }
 
 let connection: string =DBConnection.getConnection();
-console.log('Connection',connection);
+console.log('Connection',connection);*/
+
+
+//tuple
+// tuple is a colletion which is ordered and unchangeable
+
+let data : [string,number,string,boolean,number] = ['kalana',2,'amma',true,1];

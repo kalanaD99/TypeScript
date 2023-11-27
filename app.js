@@ -149,15 +149,54 @@ let result_element = document.getElementById('result');
 */
 //Class
 //========================================================
-var person = /** @class */ (function () {
-    function person(name, age, nic) {
+/*
+
+class person{
+    name: string;
+    age: number;
+    private nic: string; // cannot update when using read only keyword....
+
+    constructor(name: string, age: number, nic: string) {
         this.name = name;
         this.age = age;
         this.nic = nic;
     }
-    return person;
-}());
-var person1 = new person('kalana', 24, '199908400628');
-console.log(person1);
-person1.name = "Janith";
-console.log(person1);
+    getNic(){
+        return this.nic;
+    }
+}
+
+let person1 = new person('kalana',24,'199908400628');
+console.log(person1.name);
+
+//console.log(person1.nic); == cannot access directly while using private key word
+console.log(person1.getNic());
+
+            //DB connection
+//===========================================
+class DBConnection {
+  static connection: string;
+
+    private constructor(value: string) {
+       DBConnection.connection = value;
+    }
+    static getConnection(){
+        if(!DBConnection.connection){
+            new DBConnection('test-Connection');
+        }
+        return DBConnection.connection;
+    }
+}
+
+let connection: string =DBConnection.getConnection();
+console.log('Connection',connection);*/
+//===================bank======================
+var owner_name_input_element = document.getElementById('ownerName');
+var fixed_Amount_input_element = document.getElementById('fixedAmount');
+var add_fix_button = document.getElementById('addFixBtn');
+add_fix_button.addEventListener('click', function () {
+    var owner_name = owner_name_input_element.value;
+    var fixed_amount = fixed_Amount_input_element.value;
+    console.log("OwnerName ", owner_name);
+    console.log("Amount ", fixed_amount);
+});

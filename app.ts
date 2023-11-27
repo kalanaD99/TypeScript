@@ -156,6 +156,7 @@ let result_element = document.getElementById('result');
 
             //Class
 //========================================================
+/*
 
 class person{
     name: string;
@@ -195,4 +196,22 @@ class DBConnection {
 }
 
 let connection: string =DBConnection.getConnection();
-console.log('Connection',connection);
+console.log('Connection',connection);*/
+
+
+//===================bank======================
+
+let owner_name_input_element = document.getElementById('ownerName')as HTMLInputElement ;
+let fixed_Amount_input_element = document.getElementById('fixedAmount')as HTMLInputElement ;
+let add_fix_button = document.getElementById('addFixBtn');
+
+add_fix_button.addEventListener('click',()=>{
+    let owner_name = owner_name_input_element.value;
+    let fixed_amount = fixed_Amount_input_element.value;
+
+    console.log("OwnerName ", owner_name);
+    console.log("Amount ", fixed_amount);
+
+})
+
+
