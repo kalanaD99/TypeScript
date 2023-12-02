@@ -392,9 +392,119 @@ function sendingMessages(role:Roles){
             break;
     }
 }*/
-//heritage
-var person = /** @class */ (function () {
-    function person() {
+/*
+// heritage
+
+enum Classification {
+    MAMMAL= "MAMMAL",
+    BIRD = "BIRD"
+}
+
+interface Animal {
+    classification: Classification;
+}
+
+class Person implements Animal {
+    name: string;
+    protected nic: string;
+    age: number;
+    classification: Classification = Classification.MAMMAL;
+
+    constructor(name: string, nic: string, age: number) {
+        this.name = name;
+        this.nic = nic;
+        this.age = age;
     }
-    return person;
+
+}
+
+class Teacher extends Person {
+    subject: string;
+    college: string;
+
+    constructor(name: string, nic: string, age: number, subject: string, college: string) {
+        super(name, nic, age);
+        this.subject = subject;
+        this.college = college;
+    }
+
+    getNic(): string {
+        return this.nic;
+    }
+
+}
+
+let teacher = new Teacher("Kavindu", "1232312321", 28, "CSE", "IJSE");
+console.log(teacher.name);
+console.log(teacher.getNic());
+console.log(teacher.age);
+console.log(teacher.subject);
+console.log(teacher.college);
+console.log(teacher.classification);
+*/
+/*
+//Abstract
+
+abstract class Animal {
+    abstract move(): void;
+
+    eat(): void {
+        console.log("Eat via Mouth");
+    }
+}
+    class Cat extends Animal{
+    move(): void {
+        console.log("Using legs");
+    }
+}
+
+class Bird extends Animal{
+    move(): void {
+        console.log("using feathers");
+    }
+}
+let animal1:Animal = new Cat();
+animal1.eat();
+animal1.move();
+
+let animal2:Animal = new Bird();
+animal2.eat();
+animal2.move();
+*/
+var Student = /** @class */ (function () {
+    function Student(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+    return Student;
 }());
+var array1 = [1, 2, 3, 4, 5, 6, 7];
+var array2 = ["Hello", "IJSE", "GDSE", "TypeScript"];
+var array3 = [new Student("Kavindu", 28),
+    new Student("Kalum", 25),
+    new Student("Pathum", 20)];
+var array4 = [true, false, true, false];
+// function removeLastItem(array: (number | string | Student | boolean)[]): (number | string | Student | boolean)[] {
+//   return array.slice(0, array.length - 1);
+// }
+function removeLastItem(array) {
+    return array.slice(0, array.length - 1);
+}
+var result1 = removeLastItem(array1);
+console.log(result1);
+var result2 = removeLastItem(array2);
+console.log(result2);
+var result3 = removeLastItem(array3);
+console.log(result3);
+var result4 = removeLastItem(array4);
+console.log(result4);
+var SmartArray = /** @class */ (function () {
+    function SmartArray(array) {
+        this.array = array;
+    }
+    return SmartArray;
+}());
+new SmartArray(array1);
+new SmartArray(array2);
+new SmartArray(array3);
+new SmartArray(array4);

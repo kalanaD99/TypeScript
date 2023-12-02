@@ -410,9 +410,132 @@ function sendingMessages(role:Roles){
             break;
     }
 }*/
-//heritage
-class person{
-    name:string;
-    nic:string;
-    age:number;
+/*
+// heritage
+
+enum Classification {
+    MAMMAL= "MAMMAL",
+    BIRD = "BIRD"
 }
+
+interface Animal {
+    classification: Classification;
+}
+
+class Person implements Animal {
+    name: string;
+    protected nic: string;
+    age: number;
+    classification: Classification = Classification.MAMMAL;
+
+    constructor(name: string, nic: string, age: number) {
+        this.name = name;
+        this.nic = nic;
+        this.age = age;
+    }
+
+}
+
+class Teacher extends Person {
+    subject: string;
+    college: string;
+
+    constructor(name: string, nic: string, age: number, subject: string, college: string) {
+        super(name, nic, age);
+        this.subject = subject;
+        this.college = college;
+    }
+
+    getNic(): string {
+        return this.nic;
+    }
+
+}
+
+let teacher = new Teacher("Kavindu", "1232312321", 28, "CSE", "IJSE");
+console.log(teacher.name);
+console.log(teacher.getNic());
+console.log(teacher.age);
+console.log(teacher.subject);
+console.log(teacher.college);
+console.log(teacher.classification);
+*/
+
+/*
+//Abstract
+
+abstract class Animal {
+    abstract move(): void;
+
+    eat(): void {
+        console.log("Eat via Mouth");
+    }
+}
+    class Cat extends Animal{
+    move(): void {
+        console.log("Using legs");
+    }
+}
+
+class Bird extends Animal{
+    move(): void {
+        console.log("using feathers");
+    }
+}
+let animal1:Animal = new Cat();
+animal1.eat();
+animal1.move();
+
+let animal2:Animal = new Bird();
+animal2.eat();
+animal2.move();
+*/
+
+class Student {
+    name: string;
+    age: number;
+
+    constructor(name: string, age: number) {
+        this.name = name;
+        this.age = age;
+    }
+}
+
+let array1: number[] = [1, 2, 3, 4, 5, 6, 7];
+let array2: string[] = ["Hello", "IJSE", "GDSE", "TypeScript"];
+let array3: Student[] = [new Student("Kavindu", 28),
+    new Student("Kalum", 25),
+    new Student("Pathum", 20)];
+let array4: boolean[] = [true, false, true, false];
+
+
+// function removeLastItem(array: (number | string | Student | boolean)[]): (number | string | Student | boolean)[] {
+//   return array.slice(0, array.length - 1);
+// }
+
+function removeLastItem<T>(array: T[]): T[] {
+    return array.slice(0, array.length - 1);
+}
+
+
+let result1 = removeLastItem<number>(array1);
+console.log(result1);
+let result2 = removeLastItem<string>(array2);
+console.log(result2);
+let result3 = removeLastItem<Student>(array3);
+console.log(result3);
+let result4 = removeLastItem<boolean>(array4);
+console.log(result4);
+
+class SmartArray<T> {
+    private array: T[];
+
+    constructor(array: T[]) {
+        this.array = array;
+    }
+}
+
+new SmartArray<number>(array1);
+new SmartArray<string>(array2);
+new SmartArray<Student>(array3);
+new SmartArray<boolean>(array4);
